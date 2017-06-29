@@ -44,3 +44,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-byebug'
 gem 'pry'
+gem 'remotipart' 
+gem "pry-rails"
+gem "better_errors"

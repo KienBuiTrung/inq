@@ -1,15 +1,18 @@
 <body bottommargin="1" leftmargin="1" topmargin="1" rightmargin="1" ms_positioning="GridLayout" bgcolor="white">
-    
+      
     <%= form_tag('authenticate', method: :post) do %>
         
-
+    <% flash.each do |key, value| %>
+        <span  style="Z-INDEX: 108; LEFT: 334px; POSITION: absolute; TOP: 183px"><font color="#FF0000"><b><%= value %></font></b></span>
+      <% end %>  
     <span id="Label4" style="Z-INDEX: 108; LEFT: 264px; POSITION: absolute; TOP: 224px"><b><font color="#400040">User</font></b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 		<input name="txtUser" id="txtUser" tabindex="1" style="Z-INDEX: 102; LEFT: 448px; POSITION: absolute; TOP: 224px" value="" type="text">
-        <input name="txtPass" id="txtPass" tabindex="2" onkeydown="if ((event.which &amp;&amp; event.which ==13) || (event.keyCode &amp;&amp; event.keyCode == 13)){document.Form1.elements['Button1'].click();return false;} else return true; " style="Z-INDEX: 103; LEFT: 448px; POSITION: absolute; TOP: 264px" type="password"><span id="Label1" style="Z-INDEX: 105; LEFT: 200px; POSITION: absolute; TOP: 16px">
+        <input name="txtPass" id="txtPass" tabindex="2" onkeydown="if ((event.which &amp;&amp; event.which ==13) || (event.keyCode &amp;&amp; event.keyCode == 13)){document.Form1.elements['Button1'].click();return false;} else return true; " style="Z-INDEX: 103; LEFT: 448px; POSITION: absolute; TOP: 264px" type="password"><span id="Label1" style="Z-INDEX: 105; LEFT: 200px; POSITION: absolute; TpxOP: 16px">
             <b><font size="5" color="Blue">NGAN HANG TMCP DAU TU VA PHAT TRIEN VIET NAM</font></b></span><span id="Label2" style="Z-INDEX: 106; LEFT: 304px; POSITION: absolute; TOP: 56px">
             <b><font size="3" color="DarkSlateGray">Bank for Investment and Development of Vietnam JSC</font></b></span><span id="Label3" style="Z-INDEX: 107; LEFT: 264px; POSITION: absolute; TOP: 264px">
             <b><font color="#400040">Password</font></b></span>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             <%= submit_tag 'Đăng nhập', style: "Z-INDEX: 109; LEFT: 400px; POSITION: absolute; TOP: 312px" %>
-            <!-- <input name="Button1" value="Đăng nhập" id="Button1" style="Z-INDEX: 109; LEFT: 400px; POSITION: absolute; TOP: 312px" type="submit"> -->
     <% end %>
 </body>
